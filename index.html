@@ -3,14 +3,9 @@
   <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>Todo App</title>
+    <link rel="stylesheet" href="styles.css">
+    <title>To-Do-App</title>
 
-    <!-- Estilos Css -->
-    <style>
-      * {
-        box-sizing: border-box;
-      }
-    </style>
   </head>
   <body>
     <main class="container">
@@ -27,6 +22,9 @@
             <option value="9">Fabian</option>
             <option value="10">Iris</option>
           </select>
+          <button class="btn" id="btndisplay">
+            Mostrar lista de tareas
+          </button>
       </section>
       <section class="user-container" id="user-container">
           <!-- Elemento de listas como se deben de ver las tareas -->
@@ -35,9 +33,6 @@
             <li>Nombre completo: Rogelio Trejo Estrada</li>
             <li>Email: rogelio.trejo@upa.edu.mx</li>
           </ul>
-          <button class="btn" id="btndisplay">
-            Mostrar lista de tareas
-          </button>
         </div>
       </section>
       <section class="task-container" id="task-container">

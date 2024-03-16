@@ -4,7 +4,7 @@ const userContainer = document.getElementById('user-container');
 const taskContainer = document.getElementById('task-container');
 const displayButton = document.getElementById('btndisplay');
 
-// Función para mostrar la información del usuario y sus tareas
+// Investigacion del async que define la funcion es asincrona 
 async function mostrarInformacionUsuario(userId) {
     try {
         // Obtener información del usuario
@@ -19,7 +19,6 @@ async function mostrarInformacionUsuario(userId) {
     }
 }
 
-// Función para mostrar la información del usuario
 function mostrarUsuario(usuario) {
     const nombreCompleto = `${usuario.firstname} ${usuario.lastname}`;
     const emailUsuario = usuario.email;
@@ -29,7 +28,7 @@ function mostrarUsuario(usuario) {
     `;
 }
 
-// Función para mostrar las tareas del usuario
+
 function mostrarTareas(tareas) {
     const ul = taskContainer.querySelector('ul');
     ul.innerHTML = '';
@@ -47,36 +46,34 @@ function mostrarTareas(tareas) {
     taskContainer.style.visibility = 'visible';
 }
 
-// Event listener para el cambio en el select de usuarios
 userSelect.addEventListener('change', () => {
     mostrarInformacionUsuario(userSelect.value);
 });
 
-// Event listener para el botón de mostrar/ocultar tareas
+
 displayButton.addEventListener('click', () => {
     taskContainer.style.visibility = taskContainer.style.visibility === 'visible' ? 'hidden' : 'visible';
 });
 
-// Obtener información de todos los usuarios
+
 function getAllUsers() {
     return fetch('data/usuarios.json').then(resp => resp.json());
 }
 
-// Obtener información de un usuario específico
+
 function getUser(value) {
     return fetch('data/usuarios.json')
         .then(resp => resp.json())
         .then(usuarios => usuarios[value - 1]);
 }
 
-// Obtener tareas de un usuario específico
 function getTasks(userId) {
     return fetch('data/tareas.json')
         .then(resp => resp.json())
         .then(tareas => tareas.filter(tarea => tarea.userId == userId));
 }
 
-// Cargar información del primer usuario al cargar la página
+
 document.addEventListener('DOMContentLoaded', () => {
     getAllUsers().then(usuarios => {
         mostrarInformacionUsuario(usuarios[0].id);

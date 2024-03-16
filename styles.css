@@ -1,0 +1,43 @@
+*{
+    margin: 15px;
+    color: black;
+}
+
+body{
+    height: 100%;
+    margin: 0;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+}
+
+select{
+    background-color: aqua;
+    border-radius: 2px;
+    color: black;
+    padding: 5px;
+    font-size: 12px;
+    font-weight: bolder;
+}
+
+option{
+    margin: 5px;
+    background-color: blueviolet;
+    color: lightblue;
+}
+
+.container{
+   width: 80%;
+   max-width: 600px;
+}
+
+.btn{
+    border-radius: 5%;
+    background-color: yellow;
+    padding: 10px;
+    font-size: 12px;
+}
+
+.btn:hover{
+    transition-duration: 0.5s;
+}
